@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    driverClassName: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://169.56.80.150:3306/test
+    username: root
+    password: bimtestm
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  

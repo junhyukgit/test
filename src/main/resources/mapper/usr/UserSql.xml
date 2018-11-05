@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.skb.itsm.usr.repository.UserRepository">
+
+    <select id="getUserList" resultType="org.skb.itsm.usr.dto.UserDTO">
+        SELECT * FROM bmet_user
+    </select>
+    
+    <select id="getUserSearch" resultType="org.skb.itsm.usr.dto.UserDTO" parameterType="string">
+        SELECT * FROM bmet_user where 1=1
+       <if test="'name' != null and 'name' != ''">
+        and name like CONCAT('%', #{name},'%')
+       </if>
+        
+        
+    </select>
+    
+</mapper>
